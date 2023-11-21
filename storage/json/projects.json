@@ -1,0 +1,34 @@
+{
+    "craze-9": {
+        "id": 1,
+        "name": "Craze 9",
+        "title": "A women's fashion e-commerce website",
+        "description": "This is a women's e-commerce website inspired by Shopify's Dawn theme. The project was built with Tailwind CSS and Vanilla Javascript on the front-end and the Laravel Framework on the back-end.",
+        "thumbnail": "assets/craze-9-thumbnail.jpg",
+        "banner": "assets/craze9-banner.jpg"
+    },
+    "manful": {
+        "id": 2,
+        "name": "Manful",
+        "title": "A men's wellbeing and grooming e-commerce website",
+        "description": "This is an e-commerce website that aims to sell men's grooming products.The site features various functionalities such as authentication, admin dashboard, CRUD and more. The project was built with Tailwind CSS and Vanilla Javascript on the front-end and the Laravel Framework on the back-end.",
+        "thumbnail": "assets/manful-thumbnail.jpg",
+        "banner": "assets/manful-banner.jpg"
+    },
+    "swimly": {
+        "id": 3,
+        "name": "Swimly",
+        "title": "A blog about swimming with a simple CMS",
+        "description": "Swimly is a website blog on swimming where as the admin you can post,delete and archive posts. The website is minimalistic and is built with the Laravel framework",
+        "thumbnail": "assets/swimly-thumbnail.jpg",
+        "banner": "assets/swimly-banner.jpg"
+    },
+    "humanity-hub": {
+        "id": 4,
+        "name": "Humanity Hub",
+        "title": "A website for a non-profit organization",
+        "description": "The site aims to convey the NGO's message of empowering women, ending gender-based domestic violence and more. I used the Wordpress content management system to design the website",
+        "thumbnail": "assets/humanity-hub-thumbnail.jpg",
+        "banner": "assets/humanityhub-banner.jpg"
+    }
+}
