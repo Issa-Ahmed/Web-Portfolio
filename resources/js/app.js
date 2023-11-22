@@ -1,12 +1,16 @@
 import "./bootstrap";
+const openMenu = document.getElementById("showMenu");
+const hideMenu = document.getElementById("hideMenu");
+const mobileNav = document.getElementById("mobileNav");
 
-const menuBtn = document.querySelector(".menu");
-const mobileMenu = document.querySelector(".mobile-menu");
+function toggleMenu() {
+    hideMenu.classList.toggle("hidden");
+    openMenu.classList.toggle("hidden");
+    mobileNav.classList.toggle("translate-x-37");
+    mobileNav.classList.contains("translate-x-37")
+        ? document.body.classList.remove("overflow-y-hidden")
+        : document.body.classList.add("overflow-y-hidden");
+}
 
-// menuBtn.addEventListener("click", function () {
-//     // mobileMenu.classList.toggle("hidden");
-//     mobileMenu.classList.add("menu-animate");
-//     // if (mobileMenu.classList.contains("menu-animate")) {
-//     //     mobileMenu.classList.remove("hidden");
-//     // }
-// });
+openMenu.addEventListener("click", toggleMenu);
+hideMenu.addEventListener("click", toggleMenu);

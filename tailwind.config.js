@@ -6,6 +6,10 @@ export default {
             colors: {
                 charcoal: "#090909",
             },
+            spacing: {
+                37: "580px",
+                "9/10": "90%",
+            },
         },
     },
     plugins: [],

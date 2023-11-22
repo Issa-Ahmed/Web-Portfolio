@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SendMailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('/about', function(){
 })->name('about');
 
 Route::get('/{name}', [ProjectController::class , 'show'])->name('project');
+Route::post('/contact-form-submit', [SendMailController::class , 'submit'])->name('contact-form-submit');

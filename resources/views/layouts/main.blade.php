@@ -11,15 +11,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Noto+Serif+Balinese&display=swap"
         rel="stylesheet" />
+    {{-- Alpine Js cdn --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.js"
+        integrity="sha512-x6oUSDeai/Inb/9HFvbrBtDOnLvFSd37f6j2tKRePhFBLYAezejnN5xgG52M20rnFN66+6EWwuFwAneEXyq6oA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- AOS Cdn --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 
-<body class="bg-charcoal font-noto text-white">
+<body class="bg-charcoal font-noto text-white overflow-x-hidden">
     {{-- Navigation --}}
     <header class="pt-5 text-white h-20">
         <nav class="flex justify-between items-center px-12">
-            <div><span class="font-bold"><a href="{{ route('home') }}">Issa</a></span> - Web Developer</div>
+            <div class="z-10"><span class="font-bold"><a href="{{ route('home') }}">Issa</a></span> - Web Developer
+            </div>
             <ul class="sm:flex space-x-5 hidden">
                 <a href="{{ route('home') }}">
                     <li>Home</li>
@@ -32,25 +44,32 @@
                 </a>
             </ul>
 
-            <div class="open-menu-btn sm:hidden block">
-                <button class="menu"
-                    onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
-                    aria-label="Main Menu">
-                    <svg width="40" height="40" viewBox="0 0 100 100">
-                        <path class="line line1"
-                            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                        <path class="line line2" d="M 20,50 H 80" />
-                        <path class="line line3"
-                            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-                    </svg>
-                </button>
+            <!-- Mobile menu icon -->
+            <div class="sm:hidden block mr-5 cursor-pointer z-10">
+                <img src="./assets/icon-hamburger.svg" alt="icon-hamburger" id="showMenu" />
+                <img class="hidden" src="./assets/icon-close.svg" alt="icon-close" id="hideMenu" />
             </div>
 
-            {{-- <div class="mobile-menu absolute top-20 left-0 bg-white w-full hidden"></div> --}}
+            <!-- Mobile navigation -->
+            <div class="sm:hidden absolute w-full h-full bg-black top-0 left-0 translate-x-37 transition-transform duration-700 ease-in"
+                id="mobileNav">
+                <ul class="relative top-24 ml-10 space-y-6 font-josefin uppercase text-3xl text-white">
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+
         </nav>
     </header>
 
     @yield('content')
+
+    <script>
+        AOS.init({
+            delay: 150
+        });
+    </script>
 
 </body>
 
